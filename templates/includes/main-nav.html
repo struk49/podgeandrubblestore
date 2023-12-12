@@ -17,10 +17,10 @@
                 Menswear
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Tops</a>
-                <a href="" class="dropdown-item">Trianers</a>
-                <a href="" class="dropdown-item">Joggers</a>
-                <a href="" class="dropdown-item">All Clothing</a>
+                <a href="{% url 'products' %}?category=Menswear" class="dropdown-item">Tops</a>
+                <a href="{% url 'products' %}?category=women" class="dropdown-item">Trianers</a>
+                <a href="{% url 'products' %}?category=Kids" class="dropdown-item">Joggers</a>
+                <a href="{% url 'products' %}?category=sports" class="dropdown-item">All Clothing</a>
             </div>
         </li>
         <li class="nav-item dropdown">
