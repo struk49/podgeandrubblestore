@@ -13,6 +13,61 @@ class Category(models.Model):
         return self.name
 
 
+class Gender(models.Model):
+    """
+    Model Gender allows the grouping of product
+    for easier searches
+    """
+    name = models.CharField(
+        max_length=254)
+    display_name = models.CharField(
+        max_length=254)
+
+    def __str__(self):
+        return self.name
+
+    def gender_display_name(self):
+        return self.display_name
+
+
+class ProductType(models.Model):
+    """
+    Model ProductType allows the grouping of products
+    for easier searches by type of item or product
+    """
+    name = models.CharField(
+        max_length=254)
+    display_name = models.CharField(
+        max_length=254)
+
+    def __str__(self):
+        return self.name
+
+    def Product_type_display_name(self):
+        return self.display_name
+
+
+class SubCategory(models.Model):
+    """
+    Model SubCategory allows the grouping of products
+    for easier searches by sub-category of item or product
+    """
+
+    class Meta:
+        verbose_name_plural = 'Sub Categories'
+
+    name = models.CharField(
+        max_length=254)
+    display_name = models.CharField(
+        max_length=254)
+
+    def __str__(self):
+        return self.name
+
+    def sub_category_display_name(self):
+        return self.display_name
+
+
 class Product(models.Model):
     """
     Model Product contains the detailed product information
@@ -34,12 +89,7 @@ class Product(models.Model):
         default=False,
         null=True,
         blank=True)
-    gender = models.CharField(max_length=20)
-    category = models.ForeignKey(
-        'Category',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL)
+   
     image = models.ImageField(
         blank=True,
         null=True)
