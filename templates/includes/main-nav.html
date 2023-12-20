@@ -16,8 +16,9 @@
                 Men
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="{% url 'products' %}?gender=men,unisex&sub_categories=footwear&Product_type=trainers%direction=asc"
+                <a href="{% url 'products' %}?gender=men%Category=footwear&Product_type=tops&direction=asc"
                 class="dropdown-item">Trainers & Shoes</a>
+                <a href="{% url 'products' %}?gender&category=footwear&direction=asc" class="dropdown-item ">By Category</a>
             </div>
         </li>
         <li class="nav-item dropdown">

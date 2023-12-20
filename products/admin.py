@@ -3,44 +3,21 @@ from .models import Product, Category, Gender, ProductType, SubCategory
 
 # Register your models here
 class ProductAdmin(admin.ModelAdmin):
-        fieldsets = (
-            (None, {
-                'fields': (
-                    'sku',
-                    ('name', 'product_description'),
-                    ('price', 'discount_price'),
-                    'image')
-            }),
-                ('Category Selections', {
-                    'classes': ('collapse',),
-                    'fields': (
-                        'gender',
-                        'category',
-                        'sub_category',
-                        'product_type',
-                        ),
-            }),
-        )
+    list_display = (
+        'sku',
+        'name',
+        'category',
+        'price',
+        'image',
+    )
 
-
-        list_display = (
-            'price',
-            'discount_price',
-            'sku',
-            'name',
-            'product_description',
-            'image',
-            )
-
-        ordering = ('sku',)
-
-
+    ordering = ('sku',)
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'display_name',
         'name',
-    )
+    )     
 
 class ProductTypeAdmin(admin.ModelAdmin):
     list_display = (
