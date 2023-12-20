@@ -73,8 +73,7 @@ class Product(models.Model):
     Model Product contains the detailed product information
     with foreign keys to the related category models
     """
-    
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+
     price = models.DecimalField(
         max_digits=6,
         decimal_places=2)
@@ -91,6 +90,27 @@ class Product(models.Model):
         null=True,
         blank=True)
    
+    gender = models.ForeignKey(
+        'Gender',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        'Category',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL)
+    sub_category = models.ForeignKey(
+        'SubCategory',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL)
+    product_type = models.ForeignKey(
+        'ProductType',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL)
+    
     image = models.ImageField(
         blank=True,
         null=True)

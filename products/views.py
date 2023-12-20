@@ -1,13 +1,19 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+# Code adapted from the CI Boutique Ado mini project
+
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404)
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product, Category, Gender, SubCategory, ProductType
 from django.db.models.functions import Lower
+from .models import (
+    Product, Gender, Category, SubCategory, ProductType)
 
-# Create your views here.
+
 
 def all_products(request):
-    """ A view to show all products, including sorting and search queries """
+    """
+    A view to show all products, including sorting and search queries
+    """
 
     products = Product.objects.all()
     sort = None
@@ -17,7 +23,6 @@ def all_products(request):
     category = None
     sub_category = None
     product_type = None
-    
 
     if request.GET:
         if 'sort' in request.GET:
@@ -33,12 +38,12 @@ def all_products(request):
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
 
-        if 'genders' in request.GET:
-            gender = request.GET['genders'].split(',')
+        if 'gender' in request.GET:
+            gender = request.GET['gender'].split(',')
             products = products.filter(
-                gender__name__in=genders)
+                gender__name__in=gender)
             gender = Gender.objects.filter(
-                name__in=genders)
+                name__in=gender)
 
         if 'category' in request.GET:
             category = request.GET['category'].split(',')
@@ -54,13 +59,14 @@ def all_products(request):
             sub_category = SubCategory.objects.filter(
                 name__in=sub_category)
 
-        if 'producttype' in request.GET:
+        if 'product_type' in request.GET:
             product_type = request.GET['product_type'].split(',')
             products = products.filter(
-                product_type__name__in=article_type)
+                product_type__name__in=product_type)
             product_type = ProductType.objects.filter(
                 name__in=product_type)
 
+       
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -71,18 +77,17 @@ def all_products(request):
             queries = (
                 Q(name__icontains=query) |
                 Q(product_description__icontains=query) |
-                Q(gGnder__name__icontains=query) |
+                Q(gender__name__icontains=query) |
                 Q(category__name__icontains=query) |
                 Q(sub_category__name__icontains=query) |
                 Q(product_type__name__icontains=query))
-
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
     context = {
         'products': products,
         'search_term': query,
-        'current_genders': Gender,
+        'current_gender': gender,
         'current_category': category,
         'current_sub_category': sub_category,
         'current_product_type': product_type,
@@ -90,7 +95,6 @@ def all_products(request):
     }
 
     return render(request, 'products/products.html', context)
-
 
 
 def product_detail(request, product_id):
@@ -103,3 +107,5 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
