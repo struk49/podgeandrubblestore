@@ -89,7 +89,10 @@ class Product(models.Model):
         default=False,
         null=True,
         blank=True)
-   
+    category = models.CharField(max_length=20)
+    gender = models.CharField(max_length=10)
+    product_type = models.CharField(max_length=20)
+    name = models.CharField(max_length=254)
     gender = models.ForeignKey(
         'Gender',
         null=True,
