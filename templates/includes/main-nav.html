@@ -17,8 +17,11 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
                 <a href="{% url 'products' %}?gender=men&category=footwear&Product_type=trainers&direction=asc"
-                class="dropdown-item">Trainers & Shoes</a>
-                <a href="{% url 'products' %}?gender=men&category=clothes&direction=asc" class="dropdown-item ">By Category</a>
+                class="dropdown-item">Trainers</a>
+                <a href="{% url 'products' %}?gender=men&category=clothes&product_type=tops&direction=asc" class="dropdown-item ">Tops</a>
+                <a href="{% url 'products' %}?gender=men&category=clothes&product_type=shorts&direction=asc" class="dropdown-item ">shorts</a>
+                <a href="{% url 'products' %}?gender=men&category=clothes&product_type=joggers&direction=asc" class="dropdown-item ">Joggers</a>
+                <a href="{% url 'products' %}?gender=men&category=clothes&product_type=jeans&direction=asc" class="dropdown-item ">jeans</a>
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -26,7 +29,11 @@
                 Women
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'products' %}?category=women" class="dropdown-item">Women</a>
+                <a href="{% url 'products' %}?category=women" class="dropdown-item">All Products</a>
+                <a href="{% url 'products' %}?gender=women&category=clothes&product_type=jeans&direction=asc" class="dropdown-item ">Jeans</a>
+                <a href="{% url 'products' %}?gender=women&category=clothes&product_type=tops&direction=asc" class="dropdown-item ">Tops</a>
+                <a href="{% url 'products' %}?gender=women&category=clothes&product_type=joggers&direction=asc" class="dropdown-item ">Joggers</a>
+                <a href="{% url 'products' %}?gender=women&category=footwear&product_type=trainers&direction=asc" class="dropdown-item ">Trainers</a>
                
             </div>
         </li>
@@ -44,6 +51,7 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
                 <a href="{% url 'products' %}??gender=men&category=sports&producttype=basketball" class="dropdown-item">Sports</a>
+              
             </div>
         </li>
     </ul>
