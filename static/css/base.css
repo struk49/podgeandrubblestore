@@ -82,6 +82,17 @@ a.category-badge > span.badge:hover {
     color: #fff !important;
 }
 
+.social-media i {
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+}
+
+.social-media i:hover {
+    color: #555;
+}
+
+
 .btt-button {
     height: 42px;
     width: 42px;
