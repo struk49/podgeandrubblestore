@@ -5,8 +5,7 @@ from django.shortcuts import (
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import (
-    Product, Gender, Category, SubCategory, ProductType)
+from .models import Product, Gender, Category, SubCategory, ProductType
 
 
 
@@ -20,7 +19,7 @@ def all_products(request):
     direction = None
     query = None
     gender = None
-    category = None
+    categories = None
     sub_category = None
     product_type = None
 
@@ -31,7 +30,8 @@ def all_products(request):
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
-
+                if sortkey == 'category':
+                    sortkey = 'category__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -49,7 +49,7 @@ def all_products(request):
             category = request.GET['category'].split(',')
             products = products.filter(
                 category__name__in=category)
-            category = Category.objects.filter(
+            categories = Category.objects.filter(
                 name__in=category)
 
         if 'sub_category' in request.GET:
@@ -88,7 +88,7 @@ def all_products(request):
         'products': products,
         'search_term': query,
         'current_gender': gender,
-        'current_category': category,
+        'current_category': categories,
         'current_sub_category': sub_category,
         'current_product_type': product_type,
         'current_sorting': current_sorting,
