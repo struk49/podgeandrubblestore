@@ -19,7 +19,7 @@ def all_products(request):
     direction = None
     query = None
     gender = None
-    categories = None
+    category = None
     sub_category = None
     product_type = None
 
@@ -49,7 +49,7 @@ def all_products(request):
             category = request.GET['category'].split(',')
             products = products.filter(
                 category__name__in=category)
-            categories = Category.objects.filter(
+            category = Category.objects.filter(
                 name__in=category)
 
         if 'sub_category' in request.GET:
@@ -88,7 +88,7 @@ def all_products(request):
         'products': products,
         'search_term': query,
         'current_gender': gender,
-        'current_category': categories,
+        'current_category': category,
         'current_sub_category': sub_category,
         'current_product_type': product_type,
         'current_sorting': current_sorting,
