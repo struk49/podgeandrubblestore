@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-e62gx-a+ah%ol%aqzr&krfi4mc!0o1a!&9h*-!)8tu0r3d4h+2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-struk49-podgeandrubbles-4cdx1dilejq.ws-eu107.gitpod.io']
+ALLOWED_HOSTS = ['8000-struk49-podgeandrubbles-rm4o9zgnccg.ws-eu107.gitpod.io']
 
 
 # Application definition
@@ -173,6 +173,7 @@ STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
 
 
