@@ -5,9 +5,10 @@ html {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 body {
-    background-color: #f30707;
-    
-    
+    background: url('/media/annie-spratt-YTrsdrVyhMg-unsplash.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #555;
     font-family: 'Montserrat';
 }
 
