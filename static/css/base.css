@@ -2,14 +2,14 @@ html {
     height: 100%;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 
 body {
-    background: url('/media/annie-spratt-YTrsdrVyhMg-unsplash.jpg') no-repeat center center fixed;
+    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
-    font-family: 'Montserrat';
+    font-family: 'Lato';
 }
 
 /* from Bulma */
@@ -75,10 +75,6 @@ body {
     background: #000 !important;
 }
 
-footer{
-    color: #000;
-    height: 150px; 
-}
 
 .social_networks{
     text-align: center;
