@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', ')tt9$phf&$6@_j$jsc==pho!l=y7g)pg7ch%2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DECELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['https://git.heroku.com/podgeandrubblestore', 'localhost']
+ALLOWED_HOSTS = ['https://git.heroku.com/podgeandrubblestore.git', 'localhost']
 
 
 # Application definition
@@ -119,12 +119,6 @@ WSGI_APPLICATION = 'podgeandrubble.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
- #     'default': {
- #         'ENGINE': 'django.db.backends.sqlite3',
- #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
- #     }
- # }
      
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
@@ -137,7 +131,6 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-    
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
