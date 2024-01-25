@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DECELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['podgeandrubblestore.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['https://git.heroku.com/podgeandrubblestore.git', 'localhost']
 
 
 # Application definition
