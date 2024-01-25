@@ -25,9 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY', '$=w*t(ml+ya7=ip08_4n517xzvmat-#ff^+#1^5&z^q!-fijmk')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DECELOPMENT' in os.environ
+DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['podgeandrubblestore.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['podgeandrubbleshop-89a1a769d2d3.herokuapp.com', 'localhost', '8000-struk49-podgeandrubbles-4fr7t8pdrye.ws-eu107.gitpod.io']
 
 
 

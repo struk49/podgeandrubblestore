@@ -1,1 +1,1 @@
-web: gunicorn podgeandrubblestore.wsgi:application
+web: gunicorn podgeandrubble.wsgi:application
