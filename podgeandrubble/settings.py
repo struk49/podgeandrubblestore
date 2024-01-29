@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '$=w*t(ml+ya7=ip08_4n517xzvmat-#ff^+#1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['podgeandrubbleshop-89a1a769d2d3.herokuapp.com', 'localhost', '8000-struk49-podgeandrubbles-13ka56z65av.ws-eu107.gitpod.io']
+ALLOWED_HOSTS = ['podgeandrubbleshop-89a1a769d2d3.herokuapp.com/', 'localhost', '8000-struk49-podgeandrubbles-13ka56z65av.ws-eu107.gitpod.io']
 
 
 
