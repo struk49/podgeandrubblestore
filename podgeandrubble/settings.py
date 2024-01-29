@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = os.environ.get('SECRET_KEY', '$=w*t(ml+ya7=ip08_4n517xzvmat-#ff^+#1^5&z^q!-fijmk')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
@@ -196,7 +196,7 @@ if 'USE_AWS' in os.environ:
     
 
 #stripe
-FREE_DELIVERY_THRESHOLD = 50
+FREE_DELIVERY_THRESHOLD = 45
 STANDARD_DELIVERY_PERCENTAGE = 5
 STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
