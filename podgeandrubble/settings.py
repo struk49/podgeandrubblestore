@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '$=w*t(ml+ya7=ip08_4n517xzvmat-#ff^+#1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['podgeandrubbleshop-89a1a769d2d3.herokuapp.com','localhost', '8000-struk49-podgeandrubbles-nsndnlvmory.ws-eu107.gitpod.io']
+ALLOWED_HOSTS = ['podgeandrubbleshop-89a1a769d2d3.herokuapp.com','localhost', '8000-struk49-podgeandrubbles-x9o6o3p3oof.ws-eu108.gitpod.io']
 
 
 
@@ -63,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'podgeandrubble.urls'
@@ -181,7 +182,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
     # Bucket Config
-    AWS_STORAGE_BUCKET_NAME = 'podgeandrubble'
+    AWS_STORAGE_BUCKET_NAME = 'podgeandrubbleshop'
     AWS_S3_REGION_NAME = 'eu-west-2'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
