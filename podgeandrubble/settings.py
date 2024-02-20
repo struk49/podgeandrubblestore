@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['podgeandrubblestore-a2e07daaf52e.herokuapp.com/','localhost', '8000-struk49-podgeandrubbles-x9o6o3p3oof.ws-eu108.gitpod.io']
+ALLOWED_HOSTS = ['podgeandrubblestor.herokuapp.com/','localhost', '8000-struk49-podgeandrubbles-2j46dc9atly.ws-eu108.gitpod.io']
 
 
 
@@ -63,8 +63,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
 ]
+
 
 ROOT_URLCONF = 'podgeandrubble.urls'
 
@@ -125,18 +125,12 @@ WSGI_APPLICATION = 'podgeandrubble.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
      
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
-
+DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+     }
+ }
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
